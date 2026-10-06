@@ -1,8 +1,15 @@
 from datetime import date
 
+import allure
+
 from restful_booker.models import Booking, BookingDates
 
 
+@allure.epic("Booking API")
+@allure.feature("Update Booking")
+@allure.story("Positive Update Booking")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Обновление всех полей бронирования")
 def test_update_booking_changes_all_fields(booking_api, created_booking, token):
     updated_payload = Booking(
         firstname="Maria",

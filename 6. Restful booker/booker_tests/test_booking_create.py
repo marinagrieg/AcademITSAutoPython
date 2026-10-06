@@ -1,6 +1,12 @@
+import allure
+
 from restful_booker.models import Booking, BookingResponse
 
-
+@allure.epic("Booking API")
+@allure.feature("Create Booking")
+@allure.story("Positive Create Booking")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Создание нового бронирования")
 def test_create_booking_returns_same_data(booking_api, booking_payload):
     response = booking_api.create_booking(booking_payload)
 
